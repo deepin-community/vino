@@ -1,0 +1,14 @@
+02_server_sm-disable.patch
+#05_use-system-miniupnpc.patch
+11_hurd_maxhostnamelen.patch
+0003-Return-error-if-X11-is-not-detected.patch
+0004-Don-t-install-the-D-Bus-service-file-when-Telepathy-.patch
+0005-Do-not-restart-service-after-unclean-exit-code.patch
+0006-Do-not-listen-all-if-invalid-interface-is-provided.patch
+0007-Prevent-monitoring-all-interfaces-after-change-of-ot.patch
+0008-Properly-remove-watches-when-changing-server-props.patch
+0009-Return-empty-string-instead-of-NULL-to-prevent-criti.patch
+0010-Fix-various-defects-reported-by-covscan.patch
+libvncserver_CVE-2014-6053.patch
+libvncserver_CVE-2018-7225.patch
+libvncserver_CVE-2019-15681.patch

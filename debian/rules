@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-O1 -Wl,-z,defs -Wl,--as-needed
+
+%:
+	dh $@ --with gnome
+
+override_dh_autoreconf:
+	dh_autoreconf --as-needed
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		--with-systemduserunitdir=/usr/lib/systemd/user \
+		--enable-ipv6 \
+		--with-avahi \
+		--with-jpeg \
+		--with-libnotify \
+		--with-gcrypt \
+		--with-gnutls \
+		--with-gnome-keyring \
+		--without-telepathy \
+		--with-zlib
+
+override_dh_link:
+	mkdir -p debian/vino/usr/lib/vino
+	( cd debian/vino/usr/lib/vino && ln -s ../../libexec/* . )
+	dh_link
